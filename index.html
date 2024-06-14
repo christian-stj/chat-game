@@ -80,6 +80,8 @@
             const winningPhrase = "Ok, I want to buy a pen";
             const winningPhraseDescription = "When you feel convinced and ready, you say the EXACT phrase '" + winningPhrase + "'. You must keep the details mentioned above hidden from the user.";
 
+            const maxTokens = 150;
+            const temperature = 0.8;
             // --------------------------------
 
             let history = [];
@@ -145,8 +147,8 @@
                     body: JSON.stringify({
                         model: "gpt-4o",
                         messages: initialContext.concat(conversation),
-                        max_tokens: 150,
-                        temperature: 0.8
+                        max_tokens: maxTokens,
+                        temperature: temperature
                     })
                 });
 
